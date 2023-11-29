@@ -7,48 +7,48 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-  }
-  
-  header {
+}
+
+header {
     background-color: #000;
     color: #fff;
     padding: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  #header-logo {
+}
+
+#header-logo {
     width: 10%;
     height: auto;
     filter: invert(100%);
-  }
+}
 
-  nav a {
+nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 1em;
     font-size: 1.5em;
-  }
- 
-  main {
+}
+
+main {
     padding: 2em;
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+}
 
-  .sideband {
+.sideband {
     width: 12px;
     height: 100%;
-    background-color: #FFE600;
+    background-color: #ffe600;
     position: absolute;
     left: 0;
     top: 0;
-  }
-  
-  section {
+}
+
+section {
     margin-bottom: 2em;
     width: 100%;
     max-width: 800px;
@@ -60,29 +60,37 @@ body {
     overflow: hidden;
     max-height: 100%;
     transition: max-height 0.3s ease-in-out;
-  }
+}
 
-  div a {
+div a {
     display: block;
     margin-top: 10px;
-  }
+}
 
-  h1 {
+h1 {
     color: #000000;
-  }
-  
-  .clickable {
+}
+
+.clickable {
     cursor: pointer;
-  }
-  
-  a {
+}
+
+a {
     color: #000000;
     text-decoration: none;
-  }
-  
-  footer {
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
     background-color: #000;
     color: #fff;
     padding: 1em;
     text-align: center;
-  }
+}
+
+ul {
+    list-style-type: none;
+}

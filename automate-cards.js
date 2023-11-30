@@ -6,8 +6,10 @@ fetch('https://reposcraper-production.up.railway.app/DocumentsTree')
         return response.json();
     })
     .then((data) => {
-        const mainCards = data.map((item) => {
-            return `
+        const dirCards = data
+            .filter((item) => item.isDir === 1)
+            .map((item) => {
+                return `
                 <h2><a href="${item.url}">${item.name}</a></h2>
                 <ul>
                     ${item.dir
@@ -17,8 +19,15 @@ fetch('https://reposcraper-production.up.railway.app/DocumentsTree')
                         .join('')}
                 </ul>
             `;
-        });
-        const content = mainCards.join('');
+            })
+            .join('');
+        const fileCards = data
+            .filter((item) => item.isDir === 0)
+            .map((item) => {
+                return from_item_to_card(item, 2);
+            })
+            .join('');
+        const content = fileCards + dirCards;
         let elementToHydrate = document.getElementById('documenti');
         elementToHydrate.innerHTML += content;
     });

@@ -1,3 +1,15 @@
+@media screen and (max-width: 760px) {
+    section#chisiamo ul {
+        flex-flow: column;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    section#chisiamo ul li {
+        flex-grow: 1;
+        width: 100%;
+    }
+}
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -57,7 +69,6 @@ section {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    overflow: hidden;
     max-height: 100%;
     transition: max-height 0.3s ease-in-out;
 }
@@ -93,4 +104,54 @@ footer {
 
 ul {
     list-style-type: none;
+}
+
+section#chisiamo ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+section#chisiamo ul li {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0.64em;
+    box-shadow: 0 0 0.32em 0 rgba(0, 0, 0, 0.3);
+    border-radius: 0.64em;
+}
+
+section#chisiamo ul li ul {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    width: 100%;
+    padding: 0;
+}
+
+section#chisiamo ul li {
+    flex-grow: 1;
+    padding: 1em;
+}
+
+section#chisiamo ul li ul a {
+    flex-grow: 1;
+    padding: 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: large;
+}
+
+#documenti div {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
 }

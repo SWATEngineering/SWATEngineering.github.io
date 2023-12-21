@@ -10,7 +10,7 @@ fetch('https://reposcraper-production.up.railway.app/DocumentsTree')
             .filter((item) => item.isDir === 1)
             .map((item) => {
                 return `
-                <h2><a href="${item.url}">${item.name}</a></h2>
+                <h2><a href="${item.url}">📂 ${item.name}</a></h2>
                 <ul>
                     ${item.dir
                         .map((subItem) => {
@@ -29,12 +29,14 @@ fetch('https://reposcraper-production.up.railway.app/DocumentsTree')
             .join('');
         const content = fileCards + dirCards;
         let elementToHydrate = document.getElementById('documenti');
+        elementToHydrate.innerHTML = '<h1>DOCUMENTI</h1>';
         elementToHydrate.innerHTML += content;
     });
 
 function from_item_to_card(item, depth) {
+    let icon = item.isDir == 1 ? '📂' : '📄';
     let card = `
-            <a href="${item.url}"><h${depth}>${item.name}</h${depth}></a>
+            <a href="${item.url}"><h${depth}>${icon} ${item.name}</h${depth}></a>
         `;
     if (item.isDir === 1) {
         card =

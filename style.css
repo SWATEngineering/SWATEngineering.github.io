@@ -155,3 +155,9 @@ h2 {
     align-items: center;
     justify-content: center;
 }
+
+@media (scripting: enabled) {
+    #jsChecker {
+        display: none;
+    }
+}

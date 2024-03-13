@@ -40,7 +40,10 @@ fetch('https://reposcraper-production.up.railway.app/DocumentsTree')
 function from_item_to_card(item, depth) {
     let icon = item.isDir == 1 ? '📂' : '📄';
     let opening_tag = item.isDir == 1 ? `<h${depth}>` : '<p>';
-    let closing_tag = item.isDir == 1 ? `</h${depth}>` : '</p>';
+    let closing_tag =
+        item.isDir == 1
+            ? `</h${depth}>`
+            : `<span>(download ${item.size})</span></p>`;
     let card = `
             <a href="${item.url}" target="_blank">${opening_tag}${icon} ${item.name}${closing_tag}</a>
         `;

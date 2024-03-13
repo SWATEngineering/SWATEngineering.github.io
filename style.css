@@ -156,6 +156,11 @@ h2 {
     justify-content: center;
 }
 
+#download {
+    color: #c7c7c7;
+    text-decoration-color: #c7c7c7;
+}
+
 @media (scripting: enabled) {
     #jsChecker {
         display: none;

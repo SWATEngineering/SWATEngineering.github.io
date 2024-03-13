@@ -8,9 +8,13 @@ fetch('https://reposcraper-production.up.railway.app/DocumentsTree')
     .then((data) => {
         const dirCards = data
             .filter((item) => item.isDir === 1)
+            .sort()
+            .reverse()
             .map((item) => {
                 return `
-                <h2><a href="${item.url}">📂 ${item.name}</a></h2>
+                <h2><a href="${item.url}" target="_blank">📂 ${item.name.slice(
+                    2
+                )}</a></h2>
                 <ul>
                     ${item.dir
                         .map((subItem) => {
@@ -35,8 +39,10 @@ fetch('https://reposcraper-production.up.railway.app/DocumentsTree')
 
 function from_item_to_card(item, depth) {
     let icon = item.isDir == 1 ? '📂' : '📄';
+    let opening_tag = item.isDir == 1 ? `<h${depth}>` : '<p>';
+    let closing_tag = item.isDir == 1 ? `</h${depth}>` : '</p>';
     let card = `
-            <a href="${item.url}"><h${depth}>${icon} ${item.name}</h${depth}></a>
+            <a href="${item.url}" target="_blank">${opening_tag}${icon} ${item.name}${closing_tag}</a>
         `;
     if (item.isDir === 1) {
         card =

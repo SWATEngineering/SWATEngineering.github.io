@@ -22,6 +22,7 @@ fetch('https://reposcraper-production.up.railway.app/DocumentsTree')
                         })
                         .join('')}
                 </ul>
+                ${item.name.slice(2) == 'Candidatura' ? '' : '<hr>'}
             `;
             })
             .join('');

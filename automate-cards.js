@@ -77,6 +77,22 @@ function from_item_to_card(item, depth) {
                 ' - v' +
                 item.name[2] +
                 ']';
+        } else if (item.name.length == 4) {
+            let year = item.name[1].slice(0, 2);
+            let month = item.name[1].slice(2, 4);
+            let day = item.name[1].slice(4);
+            item.name =
+                item.name[0] +
+                ' [' +
+                day +
+                '/' +
+                month +
+                '/' +
+                year +
+                ' - v' +
+                item.name[3] +
+                '] ' +
+                '<b>firmato</b>';
         } else {
             item.name = item.name.join(' ');
         }

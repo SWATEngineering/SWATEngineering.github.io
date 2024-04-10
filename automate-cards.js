@@ -110,8 +110,9 @@ function from_item_to_card(item, depth) {
             `
                 <ul>
                     ${item.dir
-                        .sort((a, b) => a.name < b.name)
-                        .reverse()
+                        .sort((a, b) => {
+                            return a.name < b.name ? 1 : -1;
+                        })
                         .map((subItem) => {
                             return `<li>${from_item_to_card(
                                 subItem,
